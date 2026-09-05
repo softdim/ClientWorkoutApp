@@ -1,0 +1,165 @@
+body {
+    color: white;
+    background: black;
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    font-size: 22px;
+    text-align: center;
+}
+
+.menu {
+    outline: 1px solid white;
+    width: calc(100% - 20px);
+    margin: 10px auto;
+    box-sizing: border-box;
+}
+
+#invalid_login, #invalid_login a {
+	color: red;
+}
+
+/* General buttons */
+.menu_button,
+.keypad_button,
+.split_item_remove,
+.split_add,
+.reps_button {
+    outline: 1px solid #444;
+    padding: 18px 10px;
+    cursor: pointer;
+    user-select: none;
+    box-sizing: border-box;
+}
+
+.menu_button:active,
+.keypad_button:active,
+.split_item_remove:active,
+.split_add:active {
+    background: #333;
+}
+
+.reps_button {
+    display: inline-block;
+    white-space: nowrap;
+	font-size: 32px;
+}
+
+/* Main menu */
+#main_menu .menu_button {
+    padding: 22px 10px;
+}
+
+/* Exercise logging */
+#log_stats {
+    padding: 12px 8px;
+    border-bottom: 1px solid #444;
+    font-size: 17px;
+}
+
+#log_prompt {
+    padding-top: 20px;
+    font-size: 18px;
+    color: #aaa;
+}
+
+#log_view {
+    font-size: 56px;
+    font-weight: bold;
+    padding: 20px 10px;
+}
+
+/* Keypad */
+#keypad {
+    display: flex;
+    flex-direction: column;
+    gap: 3px;
+    padding: 5px;
+}
+
+.keypad_button {
+    min-height: 55px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Workout split */
+.split_day {
+    border-bottom: 1px solid #444;
+    padding: 15px 5px;
+}
+
+.split_item {
+    outline: 1px solid #333;
+    margin: 6px 0;
+    padding: 12px 10px;
+    text-align: left;
+}
+
+.split_item_remove,
+.split_add {
+    font-size: 18px;
+    padding: 12px;
+}
+
+.split_item_remove {
+    text-align: right;
+}
+
+.split_add {
+    color: #aaa;
+}
+
+/* History */
+#view_history {
+    text-align: left;
+    padding: 15px;
+}
+
+#view_history ul {
+    padding-left: 25px;
+    margin-top: 8px;
+    margin-bottom: 25px;
+}
+
+#view_history li {
+    margin-bottom: 15px;
+    padding: 12px;
+    outline: 1px solid #333;
+}
+
+/* Global menu button */
+body > .menu_button {
+    width: calc(100% - 20px);
+    margin: 10px auto;
+    padding: 18px 10px;
+    outline: 1px solid white;
+    box-sizing: border-box;
+}
+
+/* Body weight */
+#weight_record {
+    padding-bottom: 10px;
+}
+
+#weight_record > .menu_button {
+    margin-bottom: 20px;
+}
+
+#weight_record > #weight_history {
+    margin: 10px;
+    outline: 1px solid #333;
+    text-align: left;
+    padding: 12px;
+    font-size: 20px;
+}
+
+#weight_history {
+    line-height: 1.5;
+}
+
+#save_button {
+	display: none;
+	background: darkred;
+}

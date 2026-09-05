@@ -1,0 +1,138 @@
+<!--
+
+{
+    "split": {
+        "0": [],
+        "1": [],
+        "2": [],
+        "3": [],
+        "4": [],
+        "5": [],
+        "6": []
+    },
+    "history": []
+}
+
+KEY
+
+USER
+├── split
+│   └── day → [exercise names]
+│
+└── history
+    └── session
+        ├── date
+        └── workouts
+            └── exercise
+                └── name
+                └── sets
+                    ├── weight
+                    └── reps
+
+MENUS
+	INVALID_LOGIN
+		link to instructions
+	MAIN_MENU
+		buttons to redirect to SELECT_exercise, EDIT_SPLIT, VIEW_HISTORY
+	SELECT_exercise
+	LOG_exercise
+	EDIT_SPLIT
+	VIEW_HISTORY
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Workout App</title>
+    <link rel="stylesheet" href="style.css">
+  </head>
+  <body>
+  
+	<div class=menu id=invalid_login>
+		Invalid key recieved! Please click <a href="https://google.com">here</a> for instructions.
+	</div>
+	
+	<div class=menu id=main_menu>
+		<div class=menu_button onclick="select_menu('select_exercise')">Log Exercise</div>
+		<div class=menu_button onclick="select_menu('edit_split')">Edit Workout Plan</div>
+		<div class=menu_button onclick="select_menu('view_history')">View Workout History</div>
+		<div class=menu_button onclick="select_menu('weight_record')">Weight Record</div>
+	</div>
+	
+	<div class=menu id=select_exercise>
+			<!-- GENERATED IN JS -->
+	</div>
+	
+	<div class=menu id=log_exercise>
+		<div id=log_stats>Bench press | Set: X | PR: XXX | 8RM: XXX</div>
+		<div id=log_prompt>WEIGHT</div>
+		<div id=log_view>150</div>
+		<div id=weight_keypad>
+			<div class=keypad_button onclick="keypad_press(this.innerText)">RESET</div>
+			<div class=keypad_button onclick="keypad_press(this.innerText)">45</div>
+			<div class=keypad_button onclick="keypad_press(this.innerText)">35</div>
+			<div class=keypad_button onclick="keypad_press(this.innerText)">25</div>
+			<div class=keypad_button onclick="keypad_press(this.innerText)">20</div>
+			<div class=keypad_button onclick="keypad_press(this.innerText)">10</div>
+			<div class=keypad_button onclick="keypad_press(this.innerText)">5</div>
+			<div class=keypad_button onclick="keypad_press(this.innerText)">2.5</div>
+			<div class=keypad_button onclick="keypad_press(this.innerText)">x2</div>
+			<div class=keypad_button onclick="keypad_press(this.innerText)">ENTER</div>
+		</div>
+		<div id=reps_keypad>
+			<!-- GENERATED IN JS -->
+		</div>
+	</div>
+	
+	<div class=menu id=weight_record>
+		<div class=menu_button onclick="log_weight()">Log Current Weight</div>
+		<div class=menu_button onclick="delete_top_weight()">Delete Top Entry</div>
+		History:
+		<div id=weight_history>
+			9/2/2026 | 156
+		</div>
+	</div>
+	
+	<div class=menu id=edit_split>
+			<!-- GENERATED IN JS -->
+	</div>
+	
+	<div class=menu id=view_history>
+		9/2/2026:
+		<ul>
+			<li>
+				Bench press<br>
+				W: 150 | R: 8<br>
+				W: 150 | R: 8<br>
+				W: 150 | R: 8<br>
+			</li>
+			<li>
+				Squat<br>
+				W: 150 | R: 8<br>
+				W: 150 | R: 8<br>
+				W: 150 | R: 8<br>
+			</li>
+		</ul>
+		9/2/2026:
+		<ul>
+			<li>
+				Bench press<br>
+				W: 150 | R: 8<br>
+				W: 150 | R: 8<br>
+				W: 150 | R: 8<br>
+			</li>
+			<li>
+				Squat<br>
+				W: 150 | R: 8<br>
+				W: 150 | R: 8<br>
+				W: 150 | R: 8<br>
+			</li>
+		</ul>
+	</div>
+	
+	<div class=menu_button id=main_menu_button onclick="select_menu('main_menu')">MENU</div>
+	<div class=menu_button id=save_button onclick="save_data()">SAVE</div>
+  
+    <script src="script.js"></script>
+  </body>
+</html>
