@@ -301,6 +301,7 @@ async function save_data() {
 	if (DATA.requests > 9000) {
 		alert("Less than 1000 requests remaining. Please create a new JSONBin account!");
 	}
+	console.log(`You have used ${DATA.requests}/10000 requests.`);
 
 	document.getElementById("save_button").style.display = "none";
 }
