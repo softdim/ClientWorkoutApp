@@ -268,10 +268,13 @@ async function getUserData() {
 	const result = await response.json();
 
 	DATA = result.record;
-	console.log(DATA);
+	DATA.requests += 1;
+	save_data();
 }
 
 async function save_data() {
+	DATA.requests += 1;
+	
 	const response = await fetch(
 		`https://api.jsonbin.io/v3/b/${BIN_ID}`,
 		{
@@ -290,9 +293,13 @@ async function save_data() {
 		alert("Data saved");
 	} else {
 		alert("Data not saved");
+		DATA.requests -= 1;
+	}
+	
+	if (DATA.requests > 9000) {
+		alert("Less than 1000 requests remaining. Please create a new JSONBin account!");
 	}
 
-	console.log(result);
 	document.getElementById("save_button").style.display = "none";
 }
 
