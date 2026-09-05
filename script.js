@@ -268,6 +268,8 @@ async function getUserData() {
 	const result = await response.json();
 
 	DATA = result.record;
+	
+	if (!DATA.requests) DATA.requests = 0;
 	DATA.requests += 1;
 	save_data();
 }
