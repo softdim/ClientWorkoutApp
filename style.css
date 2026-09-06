@@ -93,18 +93,26 @@ body {
 .split_item {
     outline: 1px solid #333;
     margin: 1vh 0;
-    padding: 1.5vh 1.5vh;
+    padding: 1.5vh;
     text-align: left;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1vh;
+}
+
+.split_item_remove {
+    font-size: 2vh;
+    padding: 1vh 1.5vh;
+    flex-shrink: 0;
+    color: #aaa;
 }
 
 .split_item_remove,
 .split_add {
     font-size: 2.5vh;
     padding: 2vh;
-}
-
-.split_item_remove {
-    text-align: right;
 }
 
 .split_add {
