@@ -61,6 +61,39 @@ function render_log_exercise() {
 	console.log(DATA);
 }
 
+let timer;
+let remaining = 120;
+
+function start_timer(seconds = 120) {
+    clearInterval(timer);
+
+    remaining = seconds;
+    document.getElementById("remaining_time").textContent = remaining;
+	
+	select_menu("log_countdown");
+
+    timer = setInterval(loop_timer, 1000);
+}
+
+function loop_timer() {
+    remaining--;
+
+    document.getElementById("remaining_time").textContent = remaining;
+
+    if (remaining <= 0) {
+        end_timer();
+    }
+}
+
+function end_timer() {
+    clearInterval(timer);
+    timer = null;
+
+    document.getElementById("remaining_time").textContent = 0;
+
+    select_menu('log_exercise');
+}
+
 function keypad_press(btn) {
 	if (btn == "RESET") KEYPAD_VALUE = 0;
 	else if (btn == "ENTER") {
@@ -110,7 +143,7 @@ function keypad_set_reps(reps) {
 	KEYPAD_STATE = 0;
 	unsave_data();
 	render_log_exercise();
-	unsave_data();
+	start_timer();
 }
 
 function get_pr(exercise) {
