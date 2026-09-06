@@ -18,8 +18,11 @@ let WEIGHT_BUFFER;
 let KEYPAD_VALUE = 0;
 let KEYPAD_STATE = 0;
 
+let UNSAVED = false;
+
 function unsave_data() {
 	document.getElementById("save_button").style.display = "block";
+	UNSAVED = true;
 }
 
 function render_select_exercise() {
@@ -326,6 +329,7 @@ async function save_data() {
 	
 	if (response.status == 200) {
 		alert("Data saved");
+		UNSAVED = false;
 	} else {
 		alert("Data not saved");
 		DATA.requests -= 1;
@@ -357,3 +361,10 @@ window.onload = async () => {
 	
 	select_menu('main_menu');
 }
+
+window.addEventListener("beforeunload", function (event) {
+    if (!UNSAVED || confirm("Are you sure you want to exit without saving?")) return;
+
+    event.preventDefault();
+    event.returnValue = "";
+});
