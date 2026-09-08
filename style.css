@@ -42,7 +42,7 @@ body {
 .reps_button {
     display: inline-block;
     white-space: nowrap;
-	font-size: 32px;
+	font-size: 4vh;
 }
 
 /* Main menu */

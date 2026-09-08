@@ -73,7 +73,9 @@ function start_timer(seconds = 120) {
     remaining = seconds;
     document.getElementById("remaining_time").textContent = remaining;
 	
-	select_menu("log_countdown");
+	document.getElementById("log_countdown").style.display = "block";
+
+    select_menu('log_exercise');
 
     timer = setInterval(loop_timer, 1000);
 }
@@ -93,8 +95,8 @@ function end_timer() {
     timer = null;
 
     document.getElementById("remaining_time").textContent = 0;
-
-    select_menu('log_exercise');
+	
+	document.getElementById("log_countdown").style.display = "none";
 }
 
 function keypad_press(btn) {
@@ -358,6 +360,8 @@ window.onload = async () => {
 	setUserCredentials(BIN_KEY);
 	
 	await getUserData();
+	
+	document.getElementById("log_countdown").style.display = "none";
 	
 	select_menu('main_menu');
 }
