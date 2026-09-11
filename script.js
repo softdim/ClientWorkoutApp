@@ -27,10 +27,22 @@ function unsave_data() {
 
 function render_select_exercise() {
 	let s = '';
-	let exercises = DATA.split[DAY];
 	
-	for (const exercise of exercises)
+	for (const exercise of DATA.split[DAY])
 		s += `<div class=menu_button onclick="select_exercise('${exercise}')">${exercise}</div>`;
+	s += `<div class=menu_button onclick="render_all_exercises()">More...</div>`;
+	
+	document.getElementById("select_exercise").innerHTML = s;
+}
+
+function render_all_exercises() {
+	let s = '';
+	
+	for (let i = 0;  i < 7; i++) {
+		for (const exercise of DATA.split[i])
+			s += `<div class=menu_button onclick="select_exercise('${exercise}')">${exercise}</div>`;
+	}
+	s += `<div class=menu_button onclick="render_select_exercise()">Less...</div>`;
 	
 	document.getElementById("select_exercise").innerHTML = s;
 }
